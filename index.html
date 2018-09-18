@@ -19,12 +19,29 @@
 	<div class="reveal">
 		<div class="slides">
 			<!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
+			<section 
+				data-markdown="pages/intro.md" 
+				data-separator="^\n\n\n" 
+				data-separator-vertical="^\n\n" 
+				data-separator-notes="^Note:" 
+				data-charset="utf-8">
+			</section>
+
 			<section>
-				<p class="fragment mm-fade-in-then-out">Alors</p>
-				<p class="fragment mm-fade-in-then-out">ça ne </p>
-				<p class="fragment mm-fade-in-then-out">marche </p>
-				<p class="fragment mm-fade-in-then-out">pas</p>
-				<p class="fragment mm-fade-in-then-out">Escroc ?</p>
+				Les fragments
+				<section>
+					<p class="fragment mm-fade-in-then-out">Démonstration de fragment</p>
+					<p class="fragment mm-fade-in-then-out">qui se superpose</p>
+					<p class="fragment mm-fade-in-then-out">sur la même slide</p>
+				</section>
+			</section>
+
+			<section 
+				data-markdown="pages/end.md" 
+				data-separator="^\n\n\n" 
+				data-separator-vertical="^\n\n" 
+				data-separator-notes="^Note:" 
+				data-charset="utf-8">
 			</section>
 		</div>
 		<div class="footer"></div>
