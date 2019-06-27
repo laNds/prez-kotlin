@@ -22,13 +22,13 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
  *********************************************/
 body {
   background: #fff;
-  background-color: #fff; }
+}
 
 .reveal {
   font-family: "Lato", sans-serif;
   font-size: 40px;
   font-weight: normal;
-  color: #fa8541; }
+  color: #3f3f3f; }
 
 ::selection {
   color: #fff;
@@ -55,7 +55,7 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #3f3f3f;
+  color: #e73e01;
   font-family: "News Cycle", Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
@@ -140,7 +140,7 @@ body {
   padding: 5px;
   font-style: italic;
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); }
 
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {
@@ -159,7 +159,7 @@ body {
   font-family: monospace;
   line-height: 1.2em;
   word-wrap: break-word;
-  box-shadow: 0px 0px 6px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3); }
 
 .reveal code {
   font-family: monospace;
@@ -219,7 +219,7 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #f3862d;
+  color: #E73E01;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
@@ -232,15 +232,15 @@ body {
 
 .reveal .roll span:after {
   color: #fff;
-  background: #c8600b; }
+  background: #E73E01; }
 
 /*********************************************
  * IMAGES
  *********************************************/
 .reveal section img {
-  margin: 15px 0px;
+  margin: 15px 0;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #fa8541;
+  border: 4px solid #E73E01;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal section img.plain {
@@ -254,21 +254,21 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #f3862d;
+  border-color: #E73E01;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #f3862d; }
+  color: #E73E01; }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #f3862d; }
+  color: #E73E01; }
 
 .reveal .progress span {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);

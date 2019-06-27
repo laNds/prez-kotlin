@@ -20,14 +20,26 @@
 	<div class="reveal">
 		<div class="slides">
 			<!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
-			<section data-markdown="pages/intro.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"
+			<section data-markdown="pages/title.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"
 			 data-charset="utf-8">
 			</section>
 
-
 			<section data-markdown="pages/intro.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"
-			 data-charset="utf-8">
+					 data-charset="utf-8">
 			</section>
+
+			<section data-markdown="pages/syntaxe.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"
+					 data-charset="utf-8">
+			</section>
+
+			<section data-markdown="pages/null-safe.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"
+					 data-charset="utf-8">
+			</section>
+
+			<section data-markdown="pages/fonctionnalite.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"
+					 data-charset="utf-8">
+			</section>
+
 			<section>
 				<section>
 					Les fragments
@@ -51,6 +63,7 @@
 				<section data-markdown="pages/end.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n" data-separator-notes="^Note:"
 				 data-charset="utf-8">
 				</section>
+			</section>
 		</div>
 		<div class="footer"></div>
 	</div>
@@ -90,7 +103,7 @@
 				// enter/leave presentation mode by pressing key 'Windows Menu/Right'
 				93: function () {
 					RevealSpotlight.togglePresentationMode();
-				},
+				}
 			},
 
 			dependencies: [
@@ -113,7 +126,7 @@
 				{ src: 'plugin/elapsed-time-bar/elapsed-time-bar.js' },
 				// Highlight de portion de code automatique
 				{ src: 'node_modules/reveal-code-focus/reveal-code-focus.js', async: true, callback: function () { RevealCodeFocus(); } },
-				{ src: 'plugin/title-footer/title-footer.js', async: true, callback: function () { title_footer.initialize(); }, }
+				{ src: 'plugin/title-footer/title-footer.js', async: true, callback: function () { title_footer.initialize(); }}
 			]
 		});
 
