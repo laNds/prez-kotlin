@@ -4,11 +4,11 @@
 ### Principes généraux
 
 - Intégré directement au langage grâce au "?"
-- Porté par le type de l'objet manipule
+- Porté par le type de l'objet manipulé
 ```kotlin
 var a = "abc"
 a = null // compile error
-//---
+//
 var b: String? = "abc"
 println(b.length) // compile error car risque de NPE
 b = null // Ok
@@ -24,9 +24,6 @@ fun length(b: String?): Int? =  b?.length
 - Opérateur ? permet de faire des appels sécurisé
 
 ```kotlin
-var a = "abc"
-a = null // compile error
-
 var b: String? = "abc"
 println(b?.length) // Ok, affichera la valeur sinon null
 ```
