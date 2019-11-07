@@ -34,7 +34,7 @@ println(b?.length) // Ok, affichera la valeur sinon null
 ```kotlin
 val l = if (b != null) b.length else -1
 ```
-équivaut 
+#### équivaut 
 ```kotlin
 val a = b?.length ?: -1
 

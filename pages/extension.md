@@ -1,10 +1,51 @@
 # Extension
 
 
-### Extension fonction
+### Principe 
+
+Etendre les fonctionnalités d'une classe
+- sans héritage<!-- .element: class="fragment" -->
+- sans usage du Decorator pattern<!-- .element: class="fragment" -->
 
 
-### infix
+### Extension function
+
+```kotlin
+fun MutableList<Int>.swap(index1: Int, index2: Int) {
+    val tmp = this[index1] // this corresponds a la liste
+    this[index1] = this[index2]
+    this[index2] = tmp
+}
+```
+
+
+### Extension properties
+
+```kotlin
+val <T> List<T>.lastIndex: Int 
+    get() = size - 1
+```
+
+
+### Résolution statique
+
+```kotlin
+open class Forme
+class Rectangle: Forme()
+
+fun Forme.getName() = "Forme"
+fun Rectangle.getName() = "Rectangle"
+
+fun printClassName(s: Forme) = println(s.getName())   
+
+printClassName(Rectangle())
+```
+
+Forme <!-- .element: class="fragment" style="color: green"-->
+Note: Résolution statique donc pas au runtime
+
+
+### Notation infix
 
 ```kotlin
 infix fun Int.add(x: Int): Int 
@@ -12,8 +53,9 @@ infix fun Int.add(x: Int): Int
 1 add 2
 ```
 
-Note: On parle de notation Infix (possibilité d'ommettre le . et les parentthèse)
+- Extension fonction ou une fonction membre <!-- .element: class="fragment"-->
+- Un seul paramètre <!-- .element: class="fragment" -->
+- Pas de varaargs <!-- .element: class="fragment"-->
+- Pas de default value <!-- .element: class="fragment"-->
 
-        - Doit être une extension fonction ou une fonction membre
-        - Doit avoir un seul paramètre
-        - Pas de varaargs et de default value.
+Note: On parle de notation Infix (possibilité d'ommettre le . et les parentthèse)

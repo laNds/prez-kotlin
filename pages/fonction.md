@@ -62,4 +62,3 @@ asList(1,2,3,4,5,6)
 - open: Fonction pouvant être overridé
 - override: Fonction overridé
 
-Note: par défaut, les fonctions/classe  sont finales
