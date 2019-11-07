@@ -11,4 +11,7 @@
 <!-- .element: class="fragment" -->
 - Interopérabilité avec le monde Java
 <!-- .element: class="fragment" -->
+- Equals simplifié avec ==
+<!-- .element: class="fragment" -->
 
+Note: === pour l'égalité de référence
