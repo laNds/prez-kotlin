@@ -3,7 +3,7 @@
 
 ### Les coroutines, c'est quoi ?
 
-* "Threads légers"<!-- .element: class="fragment" -->
+* "Threads légers"
     * concurrence gérée au niveau de Kotlin
     * utilisation de vrais threads au besoin
 * Code élégant<!-- .element: class="fragment" -->
@@ -14,7 +14,7 @@
 
 ### Ecriture d'une coroutine
 
-* CoroutineScope<!-- .element: class="fragment" -->
+* CoroutineScope
     * Scope dans lequel on peut lancer des coroutines
 * CoroutineContext<!-- .element: class="fragment" -->
     * Pools de threads
@@ -106,7 +106,6 @@ runBlocking(Dispatchers.IO) { // utilisation du pool de threads IO
 }
 println(horoscopes)
 ```
-<!-- .element: class="fragment" -->
 <img data-src="/lib/img/parallel_way.png" style="border: none"><!-- .element: class="fragment" -->
 
 
@@ -115,8 +114,8 @@ println(horoscopes)
 
 ### Suspending functions
 
-* Fonctions dont l'exécution peut être suspendue et reprise plus tard<!-- .element: class="fragment" -->
-    * Ne bloque pas le thread
+* Fonctions dont l'exécution peut être suspendue et reprise plus tard
+    * ne bloque pas le thread
 * Ne peut être lancée que par une autre "suspending function"<!-- .element: class="fragment" -->
 * Programmation asynchrone<!-- .element: class="fragment" -->
     * conservation du paradigme imperatif
@@ -135,9 +134,9 @@ val httpClient = HttpClient(CIO) {
 ```
 
 ```kotlin
-// suspend : la fonction peut rendre la main au thread en court si elle ne fait qu'attendre
+/* suspend : la fonction peut rendre la main au thread en court
+ si elle ne fait qu'attendre */
 suspend fun getHoroscope(date: String, sign: String): Horoscope {
-
     // httpClient.get est une "suspend function"
     return httpClient
             .get<Horoscope>("$baseUrl/horoscopes/$date/$sign") {}
@@ -165,7 +164,7 @@ Temps d'exécution ≃ 220ms<!-- .element: class="fragment" -->
 <img data-src="/lib/img/asynchrone.png" style="border: none">
 
 * Sur l'appel GET, la fonction est "suspendue" le temps d'avoir la réponse du serveur
-* le thread principal est débloqué pour exécuter une autre fonction
+* Le thread principal est débloqué pour exécuter une autre fonction
 * Le temps où le thread ne fait rien d'autre qu'attendre est réduit
 
 
@@ -178,14 +177,13 @@ newFixedThreadPoolContext(2, "my-context").use {
         }
  }
 ```
-<!-- .element: class="fragment" -->
 <img data-src="/lib/img/asynchrone_pool.png" style="border: none"><!-- .element: class="fragment" -->
 
 
 ### Coroutines : ce qu'il faut retenir
 
-* synthaxe simple et claire<!-- .element: class="fragment" -->
-* outil puissant<!-- .element: class="fragment" -->
+* Synthaxe simple et claire
+* Outil puissant<!-- .element: class="fragment" -->
     * parallélisation de code bloquant
-    * Programmation asynchrone
+    * programmation asynchrone
     * même synthaxe pour les 2
