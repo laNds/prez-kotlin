@@ -1,3 +1,1 @@
 ## Questions ?
-
-APPERT Julien

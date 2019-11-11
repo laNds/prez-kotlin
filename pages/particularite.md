@@ -13,5 +13,7 @@
 <!-- .element: class="fragment" -->
 - Equals simplifié avec ==
 <!-- .element: class="fragment" -->
+- Null safety élégante
+<!-- .element: class="fragment" -->
 
 Note: === pour l'égalité de référence
