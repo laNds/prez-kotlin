@@ -12,37 +12,46 @@
 * Programmation asynchrone<!-- .element: class="fragment" -->
 
 
-### le vocabulaire
+### Ecriture d'une coroutine
 
-* CoroutineContext<!-- .element: class="fragment" -->
-    * Contexte d'execution d'une coroutine
 * CoroutineScope<!-- .element: class="fragment" -->
     * Scope dans lequel on peut lancer des coroutines
-* Lancement de coroutine<!-- .element: class="fragment" -->
-    * launch / async
-    * await : attend le résultat d'une fonction lancée dans async
-
+* CoroutineContext<!-- .element: class="fragment" -->
+    * Pools de threads
+* async / await <!-- .element: class="fragment" -->
 
 ```kotlin
-newSingleThreadContext("my-context").use { ctx ->
-    runBlocking(ctx) { // CorountineScope
-        val one = async {
-            // coroutine
-            delay(1000L);
-            1
-        }
-        val two = async {
-            // coroutine
-            delay(2000L);
-            2
-        }
-        println(one.await() + two.await())
-    }
+runBlocking(Dispatchers.Default /* CoroutineContext */) {
+    // CorountineScope
+    val one = async { maFonction1() }
+    val two = async { maFonction2() }
+    println(one.await() + two.await())
 }
 ```
+<!-- .element: class="fragment" -->
 
 
-### Un peu de concret
+### Exemple dans la vraie vie
+
+* Une API permet de récupérer l'horoscope pour un jour et un signe donnés
+    ```sh
+    GET /horoscopes/$date/$sign
+    ```
+    <!-- .element: class="fragment" -->
+    ```JSON
+    {
+    "id": "5dc3a4db7c99a330508683d7",
+    "sign": "Cancer",
+    "description": "Une bonne surprise est possible, ...",
+    "date": "2019-11-07",
+    "periode": "du 22 juin au 22 juillet"
+    }
+    ```
+<!-- .element: class="fragment" -->
+* Objectif : Récupérer tous les horoscopes du jour en appelant l'API pour chaque signe avec la date du jour<!-- .element: class="fragment" style="color: #e73e01" -->
+
+
+### Première étape...
 
 ```kotlin
 // liste des 12 signes du zodiaque
@@ -65,7 +74,6 @@ fun getHoroscope(date: String, sign: String): Horoscope {
     return response.getEntity(Horoscope::class.java)
 }
 ```
-* Objectif : récupérer tous les horoscopes du jour<!-- .element: class="fragment" style="color: #e73e01" -->
 
 
 ### Solution séquentielle
@@ -75,6 +83,9 @@ fun getHoroscope(date: String, sign: String): Horoscope {
 val results = signs.map { sign -> getHoroscope(today, sign) }
 println(results)
 ```
+
+<img data-src="/lib/img/synchrone_way.png" style="border: none"><!-- .element: class="fragment" -->
+
 Temps d'exécution ≃ 1393ms<!-- .element: class="fragment" -->
 
 
@@ -96,12 +107,10 @@ runBlocking(Dispatchers.IO) { // utilisation du pool de threads IO
 println(horoscopes)
 ```
 <!-- .element: class="fragment" -->
-(Solution équivalente à CompletableFuture)<!-- .element: class="fragment" -->
-
-Temps d'exécution ≃ 350ms<!-- .element: class="fragment" -->
+<img data-src="/lib/img/parallel_way.png" style="border: none"><!-- .element: class="fragment" -->
 
 
-### Programmation asynchrone
+## Programmation asynchrone
 
 
 ### Suspending functions
@@ -138,7 +147,6 @@ suspend fun getHoroscope(date: String, sign: String): Horoscope {
 
 ### Solution asynchrone
 ```kotlin
-// Version asynchrone
 val results = arrayListOf<List<Horoscope>>()
 runBlocking { // plus qu'un thread utilisé, c'est suffisant ;)
     val horoscopesDeferred = signs.map { sign ->
@@ -150,4 +158,34 @@ runBlocking { // plus qu'un thread utilisé, c'est suffisant ;)
 }
 println(results)
 ```
+
 Temps d'exécution ≃ 220ms<!-- .element: class="fragment" -->
+
+
+<img data-src="/lib/img/asynchrone.png" style="border: none">
+
+* Sur l'appel GET, la fonction est "suspendue" le temps d'avoir la réponse du serveur
+* le thread principal est débloqué pour exécuter une autre fonction
+* Le temps où le thread ne fait rien d'autre qu'attendre est réduit
+
+
+### Asynchrone avec plusieurs Threads
+
+```kotlin
+newFixedThreadPoolContext(2, "my-context").use {
+        runBlocking(it) { // utilisation d'un pool de 2 threads
+            // appels async...      
+        }
+ }
+```
+<!-- .element: class="fragment" -->
+<img data-src="/lib/img/asynchrone_pool.png" style="border: none"><!-- .element: class="fragment" -->
+
+
+### Coroutines : ce qu'il faut retenir
+
+* synthaxe simple et claire<!-- .element: class="fragment" -->
+* outil puissant<!-- .element: class="fragment" -->
+    * parallélisation de code bloquant
+    * Programmation asynchrone
+    * même synthaxe pour les 2
