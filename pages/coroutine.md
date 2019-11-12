@@ -5,20 +5,14 @@
 
 * "Threads légers"
     * concurrence gérée au niveau de Kotlin
-    * utilisation de vrais threads au besoin
+    * utilisation de threads au besoin
 * Code élégant<!-- .element: class="fragment" -->
     * async / await
     * adieu les CompletableFuture !
-* Programmation asynchrone<!-- .element: class="fragment" -->
+* Version stable depuis Kotlin 1.3<!-- .element: class="fragment" -->
 
 
 ### Ecriture d'une coroutine
-
-* CoroutineScope
-    * Scope dans lequel on peut lancer des coroutines
-* CoroutineContext<!-- .element: class="fragment" -->
-    * Pools de threads
-* async / await <!-- .element: class="fragment" -->
 
 ```kotlin
 runBlocking(Dispatchers.Default /* CoroutineContext */) {
@@ -28,10 +22,16 @@ runBlocking(Dispatchers.Default /* CoroutineContext */) {
     println(one.await() + two.await())
 }
 ```
-<!-- .element: class="fragment" -->
+* CoroutineContext
+    * Pools de threads
+    * Etat des jobs
+* CoroutineScope
+    * Scope d'exécution des coroutines
+    * Gestion des erreurs
+* Lancement avec async / await
 
 
-### Exemple dans la vraie vie
+### Utilisation dans la vraie vie
 
 * Une API permet de récupérer l'horoscope pour un jour et un signe donnés
     ```sh
@@ -138,10 +138,10 @@ val httpClient = HttpClient(CIO) {
 ```kotlin
 /* suspend : la fonction peut rendre la main au thread en court
  si elle ne fait qu'attendre */
-suspend fun getHoroscope(date: String, sign: String): Horoscope {
+suspend fun getAsyncHoroscope(date: String, sign: String): Horoscope {
     // httpClient.get est une "suspend function"
     return httpClient
-            .get<Horoscope>("$baseUrl/horoscopes/$date/$sign") {}
+            .get<Horoscope>("$baseUrl/horoscopes/$date/$sign")
 }
 ```
 
@@ -151,7 +151,7 @@ suspend fun getHoroscope(date: String, sign: String): Horoscope {
 val results = arrayListOf<List<Horoscope>>()
 runBlocking { // plus qu'un thread utilisé, c'est suffisant ;)
     val horoscopesDeferred = signs.map { sign ->
-        async { getHoroscope(today, sign) }
+        async { getAsyncHoroscope(today, sign) }
     }
     horoscopesDeferred.forEach {
         horoscopes.add(it.await())
@@ -184,7 +184,7 @@ newFixedThreadPoolContext(2, "my-context").use {
 
 ### Coroutines : ce qu'il faut retenir
 
-* Synthaxe simple et claire
+* Synthaxe claire
 * Outil puissant<!-- .element: class="fragment" -->
     * parallélisation de code bloquant
     * programmation asynchrone
