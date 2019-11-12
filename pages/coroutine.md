@@ -69,7 +69,7 @@ fun getHoroscope(date: String, sign: String): Horoscope {
             .accept("application/json")
             .type("application/json")
             .get(ClientResponse::class.java)
-    val status = response.getStatus()
+    val status = response.status
     if (status != 200) {
         throw RuntimeException("Failed : HTTP error code : $status")
     }
