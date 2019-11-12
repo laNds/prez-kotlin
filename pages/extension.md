@@ -41,7 +41,7 @@ fun printClassName(s: Forme) = println(s.getName())
 printClassName(Rectangle())
 ```
 
-Forme <!-- .element: class="fragment" style="color: green"-->
+Forme <!-- .element: class="fragment" style="color: #238500"-->
 Note: Résolution statique donc pas au runtime
 
 

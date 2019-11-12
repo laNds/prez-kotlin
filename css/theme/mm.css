@@ -17,18 +17,24 @@ section.has-dark-background, section.has-dark-background h1, section.has-dark-ba
     opacity: 1;
     display: inline; }
 
+.float-right {
+  float: right !important; }
+
+.float-left {
+  float: left !important; }
+
 /*********************************************
  * GLOBAL STYLES
  *********************************************/
 body {
   background: #fff;
-}
+  background-color: #fff; }
 
 .reveal {
-  font-family: "Lato", sans-serif;
+  font-family: "Poppins", sans-serif;
   font-size: 40px;
   font-weight: normal;
-  color: #3f3f3f; }
+  color: #757575; }
 
 ::selection {
   color: #fff;
@@ -45,12 +51,6 @@ body {
   line-height: 1.3;
   font-weight: inherit; }
 
-.float-right {
-  float: right!important;
-}
-.float-left {
-  float: left!important;
-}
 /*********************************************
  * HEADERS
  *********************************************/
@@ -61,7 +61,7 @@ body {
 .reveal h5,
 .reveal h6 {
   margin: 0 0 20px 0;
-  color: #e73e01;
+  color: #db3924;
   font-family: "News Cycle", Impact, sans-serif;
   font-weight: normal;
   line-height: 1.2;
@@ -146,7 +146,7 @@ body {
   padding: 5px;
   font-style: italic;
   background: rgba(255, 255, 255, 0.05);
-  box-shadow: 0 0 2px rgba(0, 0, 0, 0.2); }
+  box-shadow: 0px 0px 2px rgba(0, 0, 0, 0.2); }
 
 .reveal blockquote p:first-child,
 .reveal blockquote p:last-child {
@@ -165,7 +165,7 @@ body {
   font-family: monospace;
   line-height: 1.2em;
   word-wrap: break-word;
-  box-shadow: 0 0 6px rgba(0, 0, 0, 0.3); }
+  box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.15); }
 
 .reveal code {
   font-family: monospace;
@@ -225,28 +225,28 @@ body {
  * LINKS
  *********************************************/
 .reveal a {
-  color: #E73E01;
+  color: #ff4b33;
   text-decoration: none;
   -webkit-transition: color .15s ease;
   -moz-transition: color .15s ease;
   transition: color .15s ease; }
 
 .reveal a:hover {
-  color: #f9be8d;
+  color: #ffa599;
   text-shadow: none;
   border: none; }
 
 .reveal .roll span:after {
   color: #fff;
-  background: #E73E01; }
+  background: #e61b00; }
 
 /*********************************************
  * IMAGES
  *********************************************/
 .reveal section img {
-  margin: 15px 0;
+  margin: 15px 0px;
   background: rgba(255, 255, 255, 0.12);
-  border: 4px solid #E73E01;
+  border: 4px solid #757575;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.15); }
 
 .reveal section img.plain {
@@ -260,21 +260,21 @@ body {
 
 .reveal a:hover img {
   background: rgba(255, 255, 255, 0.2);
-  border-color: #E73E01;
+  border-color: #ff4b33;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.55); }
 
 /*********************************************
  * NAVIGATION CONTROLS
  *********************************************/
 .reveal .controls {
-  color: #E73E01; }
+  color: #ff4b33; }
 
 /*********************************************
  * PROGRESS BAR
  *********************************************/
 .reveal .progress {
   background: rgba(0, 0, 0, 0.2);
-  color: #E73E01; }
+  color: #ff4b33; }
 
 .reveal .progress span {
   -webkit-transition: width 800ms cubic-bezier(0.26, 0.86, 0.44, 0.985);

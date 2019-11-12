@@ -59,17 +59,19 @@ val signs = arrayOf("Bélier", "Taureau", "Gémeaux", "Cancer" ...)
 ```
 
 ```kotlin
-// Appel API /horoscopes/$date/$sign avec la lib Jersey
-// récupere l'horoscope pour un jour et un signe donnés
+/* Appel API /horoscopes/$date/$sign avec la lib Jersey
+   récupere l'horoscope pour un jour et un signe donnés */
 fun getHoroscope(date: String, sign: String): Horoscope {
     val client = Client()
-    val webResource = client.resource("$baseUrl/horoscopes/$date/$sign")
+    val webResource = 
+        client.resource("$baseUrl/horoscopes/$date/$sign")
     val response = webResource
             .accept("application/json")
             .type("application/json")
             .get(ClientResponse::class.java)
-    if (response.getStatus() != 200) {
-        throw RuntimeException("Failed : HTTP error code : " + response.getStatus())
+    val status = response.getStatus()
+    if (status != 200) {
+        throw RuntimeException("Failed : HTTP error code : $status")
     }
     return response.getEntity(Horoscope::class.java)
 }

@@ -20,16 +20,17 @@
 
 
 // Override theme settings (see ../template/settings.scss)
-$mainFont: 'Lato', sans-serif;
-$mainColor: rgb(250, 133, 65);
+$mainFont: 'Poppins', sans-serif;
+$mainColor: rgb(117, 117, 117);
 $headingFont: 'News Cycle', Impact, sans-serif;
-$headingColor: rgb(63, 63, 63);
+$headingColor: rgb(219, 57, 36);
 $headingTextShadow: none;
 $headingTextTransform: none;
 $backgroundColor: #fff;
-$linkColor: rgb(243, 134, 45);
+$linkColor: rgb(255, 75, 51);
 $linkColorHover: lighten( $linkColor, 20% );
 $selectionBackgroundColor: rgba(0, 0, 0, 0.99);
+
 
 section.has-dark-background {
 	&, h1, h2, h3, h4, h5, h6 {
@@ -45,6 +46,13 @@ section.has-dark-background {
 		opacity: 1;
 		display: inline;
 	}
+}
+
+.float-right {
+	float: right!important;
+}
+.float-left {
+	float: left!important;
 }
 
 // Theme template ------------------------------
