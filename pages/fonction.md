@@ -1,4 +1,4 @@
-# Fonction
+## Fonction
 
 
 ### Déclaration
