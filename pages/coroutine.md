@@ -1,4 +1,4 @@
-# Coroutine
+## Coroutine
 
 
 ### Les coroutines, c'est quoi ?
@@ -148,7 +148,7 @@ suspend fun getAsyncHoroscope(date: String, sign: String): Horoscope {
 
 ### Solution asynchrone
 ```kotlin
-val results = arrayListOf<List<Horoscope>>()
+val horoscopes = arrayListOf<List<Horoscope>>()
 runBlocking { // plus qu'un thread utilisé, c'est suffisant ;)
     val horoscopesDeferred = signs.map { sign ->
         async { getAsyncHoroscope(today, sign) }
