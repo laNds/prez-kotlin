@@ -36,14 +36,12 @@ Quand on écrit en java :
 <span class="littleCode">
 
 ```java
-
 if (signaletique.getAdresse() != null && signaletique.getAdresse().getCodePostal() != null) {
     usr.setCodePostal(signaletique.getAdresse().getCodePostal().getCodePostal_type0());
 }
 if (signaletique.getAdresse() != null && signaletique.getAdresse().getVille() != null) {
     usr.setCodePostal(signaletique.getAdresse().getVille().getVille_type0());
 }
-
 ```
 
 </span>
@@ -51,7 +49,6 @@ if (signaletique.getAdresse() != null && signaletique.getAdresse().getVille() !=
 On peut écrire en kotlin :
 
 ```kotlin
-
 usr.setCodePostal(signaletique?.adresse?.codePostal?.codePostal_type0)
 usr.setVille(signaletique?.adresse?.ville?.ville_type0)
 
@@ -66,7 +63,6 @@ val l = if (b != null) b.length else -1
 #### équivaut 
 ```kotlin
 val a = b?.length ?: -1
-
 ```
 
 
@@ -76,5 +72,5 @@ val a = b?.length ?: -1
 - Risque de NPE si mal utilisé
 
 ```kotlin
-val l = b!!.length // Peut throw une NPE si b était réelement nulle
+val l = b!!.length // Peut throw une NPE si b était réellement nulle
 ```

@@ -14,8 +14,8 @@
 * Pas d'appel au .stream()
 * applicable sur tout type itérable <!-- .element: class="fragment" -->
 * Ré-utilisable <!-- .element: class="fragment" -->
-* Eager (Lazy pour Java)  <!-- .element: class="fragment" -->
 * flatMap ne nécessite pas de renvoyer un stream <!-- .element: class="fragment" -->
+* Eager (Lazy pour Java)  <!-- .element: class="fragment" -->
 
 
 ### Lazy vs Eager
@@ -36,3 +36,14 @@ val result = listOf(1, 2, 3, 4, 5).asSequence()
   .first()
 ```  
 
+
+### Lambda avec un seul argument
+
+it, nom de l'élement parcouru
+```kotlin
+val result = listOf(1, 2, 3, 4, 5) 
+  .map { it * it } 
+  .filter { it < 10 }
+  //filter(1) { it < 10 } 
+  .first()
+```

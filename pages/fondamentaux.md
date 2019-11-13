@@ -64,14 +64,3 @@ val (validElements, nonValidElements) =
             elements.partition { element.isValid }
 // partition renvoie un Pair
 ```
-
-
-### String template
-
-```kotlin
-var a = 1
-val s1 = "a est $a" 
-
-a = 2
-val s2 = "${s1.replace("est", "était")}, et maintenant est $a"
-```

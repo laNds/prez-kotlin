@@ -65,19 +65,7 @@ data class Counter(val dayIndex: Int) {
     }
 }
 val counter = Counter(1)
-println(counter1 + 4)
-```
-
-
-### Lambda avec un seul argument
-
-it, nom de l'élement parcouru
-```kotlin
-val result = listOf(1, 2, 3, 4, 5) 
-  .map { it * it } 
-  .filter { it < 10 }
-  //filter(1) { it < 10 } 
-  .first()
+println(counter + 4)
 ```
 
 

@@ -14,11 +14,9 @@ val i = if (a > b) a else b
 
 ```kotlin
 // Sur des collections
-
 for (item in collection) print(item)
 
 // Sur des Map 
-
 val s = HashMap<String, String>()
 for ((k,v) in s) println("<$k, $v>")
 ```
@@ -57,7 +55,7 @@ when {
 ### Ranges
   
 ```kotlin
-// Utilisable pour itéré
+// Utilisable pour itérer
 for (x in 1..5) {
     print(x)
 }
@@ -72,5 +70,4 @@ when (x) {
     !in 10..20 -> print("x is outside the range")
     else -> print("none of the above")
 }
-
 ```

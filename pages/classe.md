@@ -3,7 +3,7 @@
 
 ### Instanciation des classes
 ```kotlin
-class Chat(val nom: String, val race) {
+class Chat(val nom: String, val race: String) {
     constructor(nom: String): this(nom, "Européen") {
         println("Constructeur Auxiliaire")
     }
