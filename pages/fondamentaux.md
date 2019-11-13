@@ -62,7 +62,7 @@ Utilisation des objets Pair et Triple <br>
 ```kotlin
 val (validElements, nonValidElements) = 
             elements.partition { element.isValid }
-// partition renvoit un Pair
+// partition renvoie un Pair
 ```
 
 

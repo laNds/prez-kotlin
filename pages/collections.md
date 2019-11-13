@@ -20,6 +20,7 @@
 
 ### Lazy vs Eager
 
+Eager - 5 map, 5 filter <!-- .element: style="color: #238500"-->
 ```kotlin
 val result = listOf(1, 2, 3, 4, 5) 
   .map { n -> n * n } 
@@ -27,13 +28,11 @@ val result = listOf(1, 2, 3, 4, 5)
   .first()
 ```
 
-* Java : 1 map, 1 filter <!-- .element: class="fragment" style="color: #238500"-->
-* Kotlin : 5 map, 5 filter <!-- .element: class="fragment" style="color: #238500"-->
-
+Lazy - 1 map, 1 filter <!-- .element: style="color: #238500"-->
 ```kotlin
 val result = listOf(1, 2, 3, 4, 5).asSequence()
   .map { n -> n * n } 
   .filter { n -> n < 10 } 
   .first()
-```
-<!-- .element: class="fragment" -->
+```  
+

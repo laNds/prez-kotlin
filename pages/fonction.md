@@ -57,7 +57,7 @@ asList(1,2,3,4,5,6)
 
 
 ### Surcharge d'opérateur
-* Liste des opérateurs surchargeable limitée
+Liste des opérateurs surchargeable limitée
 ```kotlin
 data class Counter(val dayIndex: Int) {
     operator fun plus(increment: Int): Counter {

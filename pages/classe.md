@@ -2,7 +2,7 @@
 
 
 ### Instanciation des classes
-```
+```kotlin
 class Chat(val nom: String, val race) {
     constructor(nom: String): this(nom, "Européen") {
         println("Constructeur Auxiliaire")
@@ -16,7 +16,7 @@ chat.nom = "RonRonRon" // impossible car val utilisé
 
 ### Object
 Equivalence au Singleton
-```
+```kotlin
 object Math {
     fun moyenne(valeurs: Array<Int>): Double {
         if (valeurs.isEmpty()) return 0.0
@@ -29,7 +29,7 @@ println(Math.moyenne(arrayOf(1,2,3,4))
 
 ### Companion object
 Equivalent du static Java
-```
+```kotlin
 class Chat(val nom: String, val race) {
     companion object {
         const val RACE_PAR_DEFAUT = "Européen" 
