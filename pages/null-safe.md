@@ -48,7 +48,7 @@ if (signaletique.getAdresse() != null && signaletique.getAdresse().getVille() !=
 
 </span>
 
-On peut l'écrire en kotlin :
+On peut écrire en kotlin :
 
 ```kotlin
 
