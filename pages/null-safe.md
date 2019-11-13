@@ -29,6 +29,35 @@ println(b?.length) // Ok, affichera la valeur sinon null
 ```
 
 
+### Dit autrement, avec du safe calls...
+
+Quand on écrit en java :
+
+<span class="littleCode">
+
+```java
+
+if (signaletique.getAdresse() != null && signaletique.getAdresse().getCodePostal() != null) {
+    usr.setCodePostal(signaletique.getAdresse().getCodePostal().getCodePostal_type0());
+}
+if (signaletique.getAdresse() != null && signaletique.getAdresse().getVille() != null) {
+    usr.setCodePostal(signaletique.getAdresse().getVille().getVille_type0());
+}
+
+```
+
+</span>
+
+On peut l'écrire en kotlin :
+
+```kotlin
+
+usr.setCodePostal(signaletique?.adresse?.codePostal?.codePostal_type0)
+usr.setVille(signaletique?.adresse?.ville?.ville_type0)
+
+```
+
+
 ### Elvis operator
 
 ```kotlin
