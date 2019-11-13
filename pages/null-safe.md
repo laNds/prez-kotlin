@@ -72,5 +72,5 @@ val a = b?.length ?: -1
 - Risque de NPE si mal utilisé
 
 ```kotlin
-val l = b!!.length // Peut throw une NPE si b était réellement nulle
+val l = b!!.length // Peut throw une NPE si b était réellement nul
 ```
