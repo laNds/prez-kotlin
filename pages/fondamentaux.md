@@ -57,10 +57,12 @@ fun getStringLength(obj: Any): Int? {
 
 
 ### Déconstruction
+Utilisation des objets Pair et Triple <br>
 
 ```kotlin
 val (validElements, nonValidElements) = 
             elements.partition { element.isValid }
+// partition renvoit un Pair
 ```
 
 
@@ -73,23 +75,3 @@ val s1 = "a est $a"
 a = 2
 val s2 = "${s1.replace("est", "était")}, et maintenant est $a"
 ```
-
-
-### Data class
-#### Java
-```java
-class MonObject {
-    private int id;
-    private String nom;
-    
-    // Setter ... 
-    // Getter
-    // toString(), hashcode(), equals
-}
-```
-#### Kotlin
-```kotlin
-data class MonObjet(var id: Int, var nom: String)
-```
-
-Note: - var implique setter 

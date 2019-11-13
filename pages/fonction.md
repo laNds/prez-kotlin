@@ -56,6 +56,31 @@ asList(1,2,3,4,5,6)
 ```
 
 
+### Surcharge d'opérateur
+* Liste des opérateurs surchargeable limitée
+```kotlin
+data class Counter(val dayIndex: Int) {
+    operator fun plus(increment: Int): Counter {
+        return Counter(dayIndex + increment)
+    }
+}
+val counter = Counter(1)
+println(counter1 + 4)
+```
+
+
+### Lambda avec un seul argument
+
+it, nom de l'élement parcouru
+```kotlin
+val result = listOf(1, 2, 3, 4, 5) 
+  .map { it * it } 
+  .filter { it < 10 }
+  //filter(1) { it < 10 } 
+  .first()
+```
+
+
 ### Autres
 
 - tailrec : Fonction ouverte a la recursion
