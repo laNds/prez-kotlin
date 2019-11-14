@@ -27,7 +27,7 @@ val <T> List<T>.lastIndex: Int
 ```
 
 
-### Résolution statique
+### Extension : résolution statique
 
 ```kotlin
 open class Forme
@@ -42,6 +42,9 @@ printClassName(Rectangle())
 ```
 
 Forme <!-- .element: class="fragment" style="color: #238500"-->
+
+Equivalent à la définition de méthodes statiques<!-- .element: class="fragment" -->
+
 Note: Résolution statique donc pas au runtime
 
 
@@ -58,4 +61,4 @@ infix fun Int.add(x: Int): Int
 - Pas de varaargs <!-- .element: class="fragment"-->
 - Pas de default value <!-- .element: class="fragment"-->
 
-Note: On parle de notation Infix (possibilité d'ommettre le . et les parentthèse)
+Note: On parle de notation Infix (possibilité d'ommettre le . et les parenthèse)

@@ -56,19 +56,6 @@ asList(1,2,3,4,5,6)
 ```
 
 
-### Surcharge d'opérateur
-Liste des opérateurs surchargeable limitée
-```kotlin
-data class Counter(val dayIndex: Int) {
-    operator fun plus(increment: Int): Counter {
-        return Counter(dayIndex + increment)
-    }
-}
-val counter = Counter(1)
-println(counter + 4)
-```
-
-
 ### Autres
 
 - tailrec : Fonction ouverte a la recursion

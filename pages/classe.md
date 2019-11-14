@@ -74,3 +74,16 @@ data class MonObjet(var id: Int, var nom: String)
 ```
 
 Note: - var implique setter 
+
+
+### Surcharge d'opérateurs
+Liste des opérateurs surchargeables limitée
+```kotlin
+data class Counter(val dayIndex: Int) {
+    operator fun plus(increment: Int): Counter {
+        return Counter(dayIndex + increment)
+    }
+}
+val counter = Counter(1)
+println(counter + 4)
+```
