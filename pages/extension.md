@@ -54,7 +54,7 @@ Note: Résolution statique donc pas au runtime
 ### Notation infix
 
 ```kotlin
-infix fun Int.add(x: Int): Int 
+infix fun Int.add(x: Int): Int = this + x
 
 1 add 2
 ```

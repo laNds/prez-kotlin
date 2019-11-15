@@ -13,7 +13,7 @@
 <!-- .element: class="fragment" -->
 
 
-### Une synthaxe agréable
+### Une syntaxe agréable
 
 - Compacte et efficace
 - Langage Pragmatique

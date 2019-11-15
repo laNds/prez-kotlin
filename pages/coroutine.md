@@ -184,8 +184,8 @@ newFixedThreadPoolContext(2, "my-context").use {
 
 ### Coroutines : ce qu'il faut retenir
 
-* Synthaxe claire
+* Syntaxe claire
 * Outil puissant<!-- .element: class="fragment" -->
     * parallélisation de code bloquant
     * programmation asynchrone
-    * même synthaxe pour les 2
+    * même syntaxe pour les 2
