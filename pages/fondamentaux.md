@@ -64,3 +64,5 @@ val (validElements, nonValidElements) =
             elements.partition { element.isValid }
 // partition renvoie un Pair
 ```
+
+Egalement possible de déconstruire une data class

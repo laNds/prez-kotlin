@@ -4,6 +4,7 @@
 ### Instanciation des classes
 ```kotlin
 class Chat(val nom: String, val race: String) {
+    private var patte = 0
     constructor(nom: String): this(nom, "Européen") {
         println("Constructeur Auxiliaire")
     }
